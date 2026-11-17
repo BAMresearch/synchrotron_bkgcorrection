@@ -104,6 +104,11 @@ Use `-SkipArchive` during rapid local test cycles to rebuild only the unpacked a
 
 The build script creates a one-folder distribution first because it starts faster and is easier to diagnose than a self-extracting single executable. It also creates `dist\BackgroundCorrectionStudio-portable.zip` for distribution.
 
+## Method references
+
+- **ALS (AsLS).** Eilers, P. H. C.; Boelens, H. F. M. *Baseline Correction with Asymmetric Least Squares Smoothing*. Technical report, Leiden University Medical Centre, 2005. [Original report (PDF)](https://prod-dcd-datasets-public-files-eu-west-1.s3.eu-west-1.amazonaws.com/dd7c1919-302c-4ba0-8f88-8aa61e86bb9d)
+- **arPLS.** Baek, S.-J.; Park, A.; Ahn, Y.-J.; Choo, J. Baseline Correction Using Asymmetrically Reweighted Penalized Least Squares Smoothing. *Analyst* **2015**, *140*, 250–257. [DOI: 10.1039/C4AN01061B](https://doi.org/10.1039/C4AN01061B)
+
 ## Architecture
 
 - `background_app/io.py` — robust text and native binary SPC import
