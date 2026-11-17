@@ -2,7 +2,11 @@
 
 Background Correction Studio is a self-contained desktop workflow for importing spectral data series, subtracting smooth backgrounds, normalizing and integrating signals, previewing results, and exporting publication-ready plots.
 
-It modernizes the legacy `Controller.py` workflow while keeping that code untouched for numerical comparison. The application starts without `pyspectra` or Pandas. Ordinary XY-family files and modern little-endian SPC files are parsed directly.
+The application builds on the original `Controller.py` workflow, which remains available for numerical comparison. It reads XY-family files and modern little-endian SPC files directly.
+
+## Credits
+
+Martin Bienert wrote the original background-correction scripts. Dominik Al-Sabbagh developed the current desktop application and extended it with Raman data support, interactive correction previews, and batch visualization.
 
 ## Highlights
 
@@ -28,11 +32,16 @@ It modernizes the legacy `Controller.py` workflow while keeping that code untouc
 - Saveable `.bcproject` projects and JSON settings presets
 - UTF-8 data export and a complete JSON run manifest for reproducibility
 
+## Quick start
+
+Download the portable Windows ZIP from [GitHub Releases](https://github.com/BAMresearch/synchrotron_bkgcorrection/releases) when available. Extract the whole archive and launch `BackgroundCorrectionStudio.exe` from the extracted folder, with `_internal` alongside it.
+
 ## Run from source
 
 The development environment requires Python 3.10 or later plus the packages in `requirements.txt`.
 
 ```powershell
+python -m pip install -r requirements.txt
 python background_correction_studio.py
 ```
 
@@ -42,7 +51,7 @@ In the curve preview, tick **Separate reference and baseline** to show the scale
 
 ## Typical workflow
 
-1. Add files or use **Add data folder…** to import all supported data files from a selected folder. Each row shows curve count, point count, and x-range; errors are shown in red with details in the tooltip and activity log.
+1. Use **Add files…** or **Add data folder…** to import your scans. Each row shows the data item, point count, and x-range. Import errors appear in the tooltip and activity log.
 2. Drag rows, use Move up/down, or disable files as needed. Curves are processed in the displayed order.
 3. Review import, range, unit, background, and normalization settings under **Processing**. Select CPU workers from **Settings → CPU workers**.
 4. Configure optional reference subtraction and ROIs.
